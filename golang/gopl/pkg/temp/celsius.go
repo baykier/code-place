@@ -1,15 +1,15 @@
 //temp 
 package temp
 
+import (
+	"fmt"
+)
+
 type Celsius float64 //摄氏温度
 
 type Fahrenheit float64 //华氏温度
 
-const (
-	AbsoluteZeroC  	Celsius = -273.15
-	FreeXingC 		Celsius = 0
-	BolingC 		Celsius = 100
-)
+
 
 //摄氏度转换为华氏温度
 func CToF(c Celsius) Fahrenheit {
@@ -20,4 +20,8 @@ func CToF(c Celsius) Fahrenheit {
 
 func FToC(f Fahrenheit) Celsius {
 	return Celsius((f - 32) * 5 / 9)
+}
+
+func (c Celsius) String() string {
+	return fmt.Sprintf("%g°C", c)
 }

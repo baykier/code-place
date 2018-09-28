@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
-	"temp"
+	"github.com/baykier/code-place/golang/gopl/chapter2"
 )
 
 type baby string
