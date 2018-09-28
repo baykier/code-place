@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
-	"github.com/baykier/code-place/golang/gopl/chapter2"
+	"github.com/baykier/code-place/golang/gopl/pkg/temp"
 )
 
 type baby string
@@ -18,4 +18,5 @@ func main() {
 	m = 50
 	fmt.Printf("n type is %s\n", reflect.TypeOf(n))
 	fmt.Printf("n value is %s\n", n)
+	fmt.Printf("%s\n", temp.CToF(60))
 }
