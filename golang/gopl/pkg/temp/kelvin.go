@@ -10,6 +10,7 @@ type Kelvin float64
 
 func init() {
 	fmt.Println("this is init func")
+	testCall()
 }
 //开尔文转为摄氏温度
 func KToC(k Kelvin) Celsius {
