@@ -19,4 +19,6 @@ func main() {
 	fmt.Printf("n type is %s\n", reflect.TypeOf(n))
 	fmt.Printf("n value is %s\n", n)
 	fmt.Printf("%s\n", temp.CToF(60))
+	k := temp.CToK(100)
+	fmt.Println(k)
 }

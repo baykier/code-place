@@ -8,6 +8,9 @@ import (
 
 type Kelvin float64
 
+func init() {
+	fmt.Println("this is init func")
+}
 //开尔文转为摄氏温度
 func KToC(k Kelvin) Celsius {
 	return Celsius(k - 273.15)
