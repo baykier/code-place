@@ -6,7 +6,7 @@ var pc[256]byte
 
 func init () {
 	for i, _ := range pc {
-		pc[i] = pc[i/2] + pc[i&1]
+		pc[i] = pc[i/2] + byte[i&1]
 	}
 }
 
