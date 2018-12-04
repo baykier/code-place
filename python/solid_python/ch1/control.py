@@ -25,3 +25,13 @@ l = [1, 9, 39, 45, 33]
 
 for m in l:
     print(m, m ** 2)
+else:
+    print(m)  
+# range && for 
+
+for i in range(10):
+    print(i)
+# range
+
+n = list(range(1,2))
+print(n)
