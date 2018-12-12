@@ -64,3 +64,6 @@ dkms.conf
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+
+#php
+php/vender/
