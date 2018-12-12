@@ -1,0 +1,27 @@
+{
+    "name": "code-place/php",
+    "description": "just test",
+    "type": "e.g",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "baykier",
+            "email": "1035666345@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload":{
+        "psr-4": {
+            "test\\" :"test"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
