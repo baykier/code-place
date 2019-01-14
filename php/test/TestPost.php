@@ -7,6 +7,8 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;
 
+require __DIR__ . '/TestPost.php';
+
 class TestPost {
 
     public function run()
