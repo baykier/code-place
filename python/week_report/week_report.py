@@ -55,10 +55,7 @@ def parse_jobs(jobs=JOB):
 def auto_report(name = REPORT_NAME, model=MODEL_FILE):
     '''
     根据给定的模板和参数，自动生成周报
-    '''
-    pass
-
-    
+    '''   
     if not JOB:
         print('工作任务列表为空')
     else:
