@@ -2,7 +2,6 @@
 
 from openpyxl import load_workbook
 import os
-from datetime import datetime
 from datetime import date
 from datetime import timedelta
 
@@ -15,7 +14,10 @@ from datetime import timedelta
 MODEL_FILE = os.path.dirname(os.path.abspath(__file__)) + '/week_report_model.xlsx'
 REPORT_NAME = '张志杰'
 JOB = [
-    ('写文档', 1, 2) # tuple 第一个元素 干的啥 第二个 开始时间 第三个 结束时间
+    ('crm优化ajax没权限提示信息', 1, 1),  # tuple 第一个元素 干的啥 第二个 开始时间 第三个 结束时间
+    ('划外绩效申请新功能规划', 2, 2),
+    ('划外绩效申请申请表单完成', 3, 3),
+    ('划外绩效申请申请表单列表页完成', 4, 5)
 ]
 
 print(MODEL_FILE)
@@ -40,12 +42,11 @@ def parse_jobs(jobs=JOB):
     '''
 
     _jobs = []
-
-    for index,_job in enumerate(jobs):
+    for index, _job in enumerate(jobs, 6):     
         _tuple = [
-            ('E' + str(6 + index), _job[0]),
-            ('F' + str(6 + index), _job[1]),
-            ('H' + str(6 + index), _job[2])
+            ('E' + str(index), _job[0], index),
+            ('F' + str(index), get_week_date(_job[1]).strftime("%-m/%d"), index),
+            ('H' + str(index), get_week_date(_job[2]).strftime("%-m/%d"), index)
         ]
         _jobs.append(_tuple)
     return _jobs
@@ -64,17 +65,19 @@ def auto_report(name = REPORT_NAME, model=MODEL_FILE):
         wb = load_workbook(filename=model)
         ws = wb.active
 
-        print(parse_jobs())
-        for index, jobs in enumerate(JOB):
-            print(jobs)
-        print(wb.active)
         ws['I4'] = get_week_date(5).strftime('%Y-%m-%d')  # 提交日期
-        ws['G4'] = name #报告人
+        ws['G4'] = name #报告人      
+        jobs = parse_jobs()
+        for job in jobs:
+            for k,v,i in job:
+                ws[str(k)] = str(v)
+                ws['I' + str(i)] = '完成'
         wb.save(get_report_save_file())
+        print('周报自动生成ok!')
 
-
-
+def main():
+    auto_report()
 
 if __name__ == '__main__':   
-    auto_report()
+    main()
 
