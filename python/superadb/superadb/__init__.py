@@ -17,7 +17,7 @@ def run(command=None):
         _adb = '{0}\\{1}' . format(adb_path, '\\' . join(('libs', 'win', 'adb.exe')))
     else:
         _adb = '{0}/{1}' . format(adb_path, '/' . join(('libs', 'win', 'adb.exe')))
-    print(_adb)
+    # print(_adb)
     _command = '{} {}'.format(_adb, command)
     process = os.popen(_command)
     output = process.read()
